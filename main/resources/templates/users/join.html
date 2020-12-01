@@ -48,9 +48,15 @@
             dataType: 'json',
             contentType: 'application/json',
             success: d => {
-                alert(`${d.name}님 환영합니다.`)
+                if(d.name === 'FAILURE'){
+                    alert(`회원가입 실패`)
+                }else{
+                    alert(`${d.name}님 환영합니다.`)
+                }
             },
-            error: e => {}
+            error: e => {
+                alert(`${e}을 이유로 전송실패`)
+            }
         })
     })
     document.getElementById('cancle-btn')
